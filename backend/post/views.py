@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from rest_framework import permissions
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, RetrieveAPIView
-from blog.models import BlogPost
-from blog.serializers import BlogPostSerializer
+from post.models import BlogPost
+from post.serializers import BlogPostSerializer
 
 class BlogPostListView(ListAPIView):
     queryset = BlogPost.objects.order_by('-date_created')
