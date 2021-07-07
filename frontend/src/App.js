@@ -1,13 +1,19 @@
 import React from "react";
-import { Blog, BlogDetail, Category, Home, Navbar } from "./components";
+import { Blog, BlogDetail, Category, Home } from "./components";
+import Layout from "./hocs/Layout";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <h1>
-        <h1>home</h1>
-        <Blog></Blog>
-      </h1>
-    </div>
+    <Router>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/category/:id" component={Category} />
+          <Route exact path="/blog/:id" component={BlogDetail} />
+        </Switch>
+      </Layout>
+    </Router>
   );
 }
 

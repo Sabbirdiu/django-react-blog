@@ -1,9 +1,10 @@
 import React from "react";
-
-const Layout = () => {
+import Navbar from "../components/Navbar";
+const Layout = (props) => {
   return (
     <div>
-      <h1>layout</h1>
+      <Navbar></Navbar>
+      {props.children}
     </div>
   );
 };
