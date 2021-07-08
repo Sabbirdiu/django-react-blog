@@ -1,8 +1,9 @@
 import React from "react";
-import { BlogDetail, Category, Home } from "./components";
+import { Category, Home } from "./components";
+import { BlogDetail, Blog } from "./pages";
 import Layout from "./hocs/Layout";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Blog from "./pages/Blog";
+
 function App() {
   return (
     <Router>

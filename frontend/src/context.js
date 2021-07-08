@@ -2,10 +2,10 @@ import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 const AppContext = React.createContext();
 
-const AppProvider = ({ children }) => {
+const AppProvider = ({ children, props }) => {
   const [blogs, setBlogs] = useState([]);
   const [featuredBlog, setFeaturedBlog] = useState([]);
-
+  const [blog, setBlog] = useState({});
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -32,6 +32,11 @@ const AppProvider = ({ children }) => {
 
     fetchBlogs();
   }, []);
+  // details page
+
+  const createBlog = () => {
+    return { __html: blog.content };
+  };
 
   const capitalizeFirstLetter = (word) => {
     if (word) return word.charAt(0).toUpperCase() + word.slice(1);
@@ -44,6 +49,9 @@ const AppProvider = ({ children }) => {
         blogs,
         featuredBlog,
         capitalizeFirstLetter,
+        blog,
+        createBlog,
+        setBlog,
       }}
     >
       {children}
