@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="container">
       <div className="jumbotron mt-5">
-        <h1 className="display-4">Welcome to Blog Lyfe!</h1>
+        <h1 className="display-4">Welcome to Blog !</h1>
         <p className="lead">
           We make all kinds of awesome blog about various topics.
         </p>
