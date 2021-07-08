@@ -5,7 +5,7 @@ const AppContext = React.createContext();
 const AppProvider = ({ children, props }) => {
   const [blogs, setBlogs] = useState([]);
   const [featuredBlog, setFeaturedBlog] = useState([]);
-  const [blog, setBlog] = useState({});
+  const [blog, setBlog] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
